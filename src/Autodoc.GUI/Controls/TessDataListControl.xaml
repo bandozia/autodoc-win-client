@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Autodoc.GUI.Controls.TessDataListControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Autodoc.GUI.Controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
+             xmlns:viewmodel="clr-namespace:Autodoc.GUI.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:TessDataListViewModel}"
+             mc:Ignorable="d"              
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Margin="20">
+        <TextBlock Margin="0,0,0,10">Add new tesseract file</TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBox x:Name="langCodeTx" Text="{Binding LangCode}" mah:TextBoxHelper.ClearTextButton="True" Width="150" Height="30" mah:TextBoxHelper.Watermark="language code" />
+            
+            <mah:SplitButton Name="sourceVariantCb" Margin="5,0,0,0" Height="30"
+                 HorizontalContentAlignment="Left"                 
+                 DisplayMemberPath="Name"
+                 Command="{Binding DownloadCommand}"
+                 SelectedItem="{Binding SelectedSource}"
+                 SelectedIndex="0"                             
+                 ItemsSource="{Binding TessDataSources}">
+                <mah:SplitButton.Icon>
+                    <iconPacks:PackIconRemixIcon Margin="5,0,5,0" Kind="Download2Fill" />
+                </mah:SplitButton.Icon>
+            </mah:SplitButton>            
+        </StackPanel>
+
+        <Grid Margin="0, 10, 0, 0" Visibility="{Binding DownloadVisibility}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding CurrentDownload.LangCode}" VerticalAlignment="Center"/>
+            <ProgressBar Value="{Binding CurrentProgress}" Grid.Column="1" VerticalAlignment="Center" IsIndeterminate="{Binding ShowAsIndeterminade}" />
+        </Grid>
+        
+        <TextBlock Margin="0,10,0,10">Available tesseract files</TextBlock>
+        <ItemsControl ItemsSource="{Binding Downloads}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*" />
+                            <ColumnDefinition Width="0.4*" />
+                            <ColumnDefinition Width="0.3*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding LangCode}" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding FileSize}" VerticalAlignment="Center" Grid.Column="1" />
+                        <Button Foreground="DarkRed" ToolTip="Exclude" Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center"  Grid.Column="2" Style="{DynamicResource MahApps.Styles.Button.Circle}">
+                            <iconPacks:RemixIcon Width="18" Height="18" Kind="DeleteBin4Fill" Spin="False" />
+                        </Button>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+    </StackPanel>
+</UserControl>
