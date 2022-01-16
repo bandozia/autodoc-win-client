@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Autodoc.GUI.View.DecodeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Autodoc.GUI.View"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:viewmodel="clr-namespace:Autodoc.GUI.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:DecodeViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="295" />
+            <ColumnDefinition Width="1" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+
+        <ContentControl x:Name="tessDataContent" />
+        <Rectangle Grid.Column="1" Fill="LightGray" />
+        <ContentControl x:Name="fileListContent" Grid.Column="2" />
+        <Rectangle Grid.Column="3" Fill="LightGray" />
+
+        <Label Content="Completed jobs"  Grid.Column="4" Margin="0, 20, 0, 0" />
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Column="4" Margin="6,45,6,80">
+            <ItemsControl ItemsSource="{Binding CompleteJobs}">               
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock HorizontalAlignment="Left" Text="{Binding Name}" />
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Score}" Grid.Column="1" />
+                            <TextBlock HorizontalAlignment="Right" Text="{Binding Time}" Grid.Column="2" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Grid Grid.Column="4">
+            <Button Content="OCR" Command="{Binding OcrCommand}" Grid.Row="1" Width="150" Height="40" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                <Button.ContentTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <iconPacks:PackIconRemixIcon Width="18" Height="18" VerticalAlignment="Center" Kind="SearchEyeLine" />
+                            <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="{Binding}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </Button.ContentTemplate>
+            </Button>
+        </Grid>
+
+    </Grid>
+</UserControl>

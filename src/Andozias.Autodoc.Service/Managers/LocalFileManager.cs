@@ -1,9 +1,12 @@
-﻿using System.Diagnostics;
-
-namespace Andozias.Autodoc.Service.Managers;
+﻿namespace Andozias.Autodoc.Service.Managers;
 
 public class LocalFileManager : ILocalFileManager
 {
+    private static readonly string[] AllowedExtensions = new string[]
+    {
+        ".jpg", ".png", ".jpeg", ".bmp"
+    };
+
     public void Initialize()
     {
         if (!Directory.Exists("./tessdata"))
@@ -16,7 +19,17 @@ public class LocalFileManager : ILocalFileManager
         {   
             yield return new FileInfo(f);
         }
-    }      
+    }
+
+    public IEnumerable<FileInfo> GetValidImgFileList(string[] filePaths)
+    {
+        foreach (var path in filePaths)
+        {
+            var fi = new FileInfo(path);
+            if (fi.Exists && AllowedExtensions.Contains(fi.Extension))
+                yield return fi;
+        }
+    }
 
     public async Task<long> CopyTo(Stream source, string dst, Action<long>? progress)
     {
@@ -38,6 +51,4 @@ public class LocalFileManager : ILocalFileManager
 
         return totalRead;
     }
-
-   
 }

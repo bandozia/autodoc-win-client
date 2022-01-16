@@ -17,7 +17,7 @@
             <mah:SplitButton Name="sourceVariantCb" Margin="5,0,0,0" Height="30"
                  HorizontalContentAlignment="Left"                 
                  DisplayMemberPath="Name"
-                 Command="{Binding DownloadCommand}"
+                 Command="{Binding DownloadCommand}"                             
                  SelectedItem="{Binding SelectedSource}"
                  SelectedIndex="0"                             
                  ItemsSource="{Binding TessDataSources}">

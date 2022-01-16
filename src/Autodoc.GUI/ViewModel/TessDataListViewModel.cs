@@ -86,8 +86,10 @@ public class TessDataListViewModel : ViewModelBase
     private void DownloadFinished(DownloadResult result)
     {
         if (!result.Success)
-        {
-            MessageBox.Show(result.Message);
+        {            
+            if (result.Message != null)
+                Messages.Toast(result.Message);
+            
             CleanCurrentDownload();
             return;
         }

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Autodoc.GUI.Controls.Vison.DropFeedback"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Autodoc.GUI.Controls.Vison"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Rectangle StrokeThickness="3" Stroke="#FF4C768C" RadiusX="10" RadiusY="10" StrokeDashArray="2" />
+        <TextBlock Text="Drop files here" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" Foreground="#FF4C768C" />
+        <iconPacks:PackIconRemixIcon Width="25" Height="25" VerticalAlignment="Center" Kind="FileAddLine" Foreground="#FF4C768C" HorizontalAlignment="Center" Margin="0,65,0,0" />
+    </Grid>
+</UserControl>

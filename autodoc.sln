@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GUI", "GUI", "{D88E11BA-D387-43BC-B760-4A643E51AF2E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{D88E11BA-D387-43BC-B760-4A643E51AF2E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autodoc.GUI", "src\Autodoc.GUI\Autodoc.GUI.csproj", "{C1E76B1A-E486-4CB5-BE08-8B1421697D04}"
 EndProject
@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{4D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andozias.Autodoc.Service", "src\Andozias.Autodoc.Service\Andozias.Autodoc.Service.csproj", "{718AF1FC-E74D-4834-93AC-69D0C8074AF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Andozias.Autodoc.Tess", "src\Andozias.Autodoc.Tess\Andozias.Autodoc.Tess.csproj", "{7A31175F-5907-4028-8944-E6AD88578C78}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{9F38525D-1677-487A-9F18-DB61BB8DE60B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Andozias.Autodoc.Data", "src\Andozias.Autodoc.Data\Andozias.Autodoc.Data.csproj", "{E7A75B64-67CA-4881-BF9F-06B165CA34F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +39,14 @@ Global
 		{718AF1FC-E74D-4834-93AC-69D0C8074AF4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{718AF1FC-E74D-4834-93AC-69D0C8074AF4}.Release|x64.ActiveCfg = Release|x64
 		{718AF1FC-E74D-4834-93AC-69D0C8074AF4}.Release|x64.Build.0 = Release|x64
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Debug|x64.ActiveCfg = Debug|x64
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Debug|x64.Build.0 = Debug|x64
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Release|x64.ActiveCfg = Release|x64
-		{7A31175F-5907-4028-8944-E6AD88578C78}.Release|x64.Build.0 = Release|x64
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Debug|x64.Build.0 = Debug|Any CPU
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +54,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C1E76B1A-E486-4CB5-BE08-8B1421697D04} = {D88E11BA-D387-43BC-B760-4A643E51AF2E}
 		{718AF1FC-E74D-4834-93AC-69D0C8074AF4} = {4D178FCB-FB76-48D0-8D82-B59F136E40B7}
-		{7A31175F-5907-4028-8944-E6AD88578C78} = {4D178FCB-FB76-48D0-8D82-B59F136E40B7}
+		{E7A75B64-67CA-4881-BF9F-06B165CA34F5} = {9F38525D-1677-487A-9F18-DB61BB8DE60B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29821573-F076-455A-B606-19CD4E96FA7E}

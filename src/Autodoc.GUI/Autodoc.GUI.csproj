@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Andozias.Autodoc.Data\Andozias.Autodoc.Data.csproj" />
     <ProjectReference Include="..\Andozias.Autodoc.Service\Andozias.Autodoc.Service.csproj" />
   </ItemGroup>
 

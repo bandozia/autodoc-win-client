@@ -38,11 +38,7 @@
         </mah:FlyoutsControl>
     </mah:MetroWindow.Flyouts>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="295" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <ContentControl x:Name="tessDataListContent" />
+    <Grid x:Name="mainGrid">      
+        <ContentControl x:Name="mainContent" />
     </Grid>
 </mah:MetroWindow>
